@@ -16,7 +16,7 @@ def load_data():
 
     # Ensure NIM columns are of the same type for comparison
     course_database['NIM'] = course_database['NIM'].astype(str)
-    response_data['NIM'] = response_data['NIM'].astype(str)
+    response_data['NIM-NIM'] = response_data['NIM-NIM'].astype(str)
 
     return course_database, response_data
 
@@ -33,7 +33,7 @@ if st.button("Show"):
         student_courses = course_database[course_database['NIM'] == student_id]
 
         # Filter for the student's responses
-        response_data_filtered = response_data[response_data['NIM'] == student_id]
+        response_data_filtered = response_data[response_data['NIM-NIM'] == student_id]
 
         # Debug: Uncomment these lines if you want to check the data during debugging
         # st.write("Debug: Course Database DataFrame", course_database)
